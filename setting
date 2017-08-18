@@ -68,11 +68,15 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 call neobundle#end()
 
+set hidden
 set number
 set ruler
 au GUIEnter * simalt ~x
 au   BufEnter *   execute ":lcd " . expand("%:p:h")
  
+set directory=$VIM/.vim/tmp
+set backupdir=$VIM/.vim/tmp
+set undodir=$VIM/.vim/tmp
 
 autocmd FileType perl,cgi :compiler perl
 autocmd FileType cs :compiler cs
